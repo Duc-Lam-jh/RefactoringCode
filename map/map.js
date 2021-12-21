@@ -73,18 +73,14 @@ function LoadMap () {
 			e.target != document.getElementById('searchbox') ||
 			e.target != document.getElementById('search-results')
 		) {
-			if (!document.getElementById('search-results').classList.contains('none')) {
-				document.getElementById('search-results').classList.add('none');
-			}
+			HideElement('search-results');
 		}
 
 		if (
 			e.target != document.getElementById('second-searchbox') ||
 			e.target != document.getElementById('second-search-results')
 		) {
-			if (!document.getElementById('second-search-results').classList.contains('none')) {
-				document.getElementById('second-search-results').classList.add('none');
-			}
+			HideElement('second-search-results');
 		}
 	});
 }
