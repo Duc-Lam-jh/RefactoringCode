@@ -1,6 +1,7 @@
 /* ========= Utilities ========== */
 const Markers = () => {
 	const markerList = [];
+
 	return {
 		append    : function (marker) {
 			markerList.push(marker);
@@ -28,7 +29,6 @@ function HideElement(id){
 
 /* ========= Declarations ========== */
 const markers = Markers(); //an array to store the available markers on the map
-
 let navigate = false; //a flag to indicate if the navigating function is turned on
 mapboxgl.accessToken =
 	'pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA'; //personal access token
@@ -55,6 +55,26 @@ function LoadMap () {
 	//get user's current location, if success, call function SuccessLocation, otherwise call ErrorLocation
 	GoToMyLocation();
 
+	//set up search events
+	SetUpSearch();
+}
+
+//FUNCTION: when successfully got user's location, zoom in on it on the map
+function SuccessLocation (position) {
+	FlyToPlace([ position.coords.longitude, position.coords.latitude ]);
+}
+
+//FUNCTION: if cannot get user's location, zoom into the default coords
+function ErrorLocation () {}
+
+//FUNCTION to jump to my current location
+function GoToMyLocation () {
+	navigator.geolocation.getCurrentPosition(SuccessLocation, ErrorLocation, {
+		enableHighAccuracy : true,
+	});
+}
+
+function SetUpSearch(){
 	//add searching functionality to the original searchbox
 	const searchbox = document.getElementById('searchbox');
 	searchbox.addEventListener('keyup', function () {
@@ -82,21 +102,6 @@ function LoadMap () {
 		) {
 			HideElement('second-search-results');
 		}
-	});
-}
-
-//FUNCTION: when successfully got user's location, zoom in on it on the map
-function SuccessLocation (position) {
-	FlyToPlace([ position.coords.longitude, position.coords.latitude ]);
-}
-
-//FUNCTION: if cannot get user's location, zoom into the default coords
-function ErrorLocation () {}
-
-//FUNCTION to jump to my current location
-function GoToMyLocation () {
-	navigator.geolocation.getCurrentPosition(SuccessLocation, ErrorLocation, {
-		enableHighAccuracy : true,
 	});
 }
 
@@ -128,7 +133,6 @@ function LoadResults (array, id) {
 	const resultsBox = document.getElementById(id + 'search-results');
 	resultsBox.innerHTML = '';
 
-	// HideElement(id + 'search-results');
 	if (resultsBox.classList.contains('none')) {
 		resultsBox.classList.remove('none');
 	}
