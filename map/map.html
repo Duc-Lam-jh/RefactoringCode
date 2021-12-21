@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapbox</title>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-language/v1.0.0/mapbox-gl-language.js'></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <div class="search-wrapper">
+    <div class="searchbar">
+      <input id="searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
+      <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
+    </div>
+    <div id="search-results" class="none">
+      <div class="search-item">
+        <div class="name">Việt Nam</div>
+        <div class="address"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="secondSearch" class="navigate-search-wrapper none">
+    <div class="searchbar">
+      <input id="second-searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
+      <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
+    </div>
+    <div id="second-search-results" class="none">
+      <div class="search-item">
+        <div class="name">Việt Nam</div>
+        <div class="address"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="typeDistance" class="typeOfDistance">
+    <select id="typeOfDistance" name="typeOfDistance">
+      <option value="walking" selected>Walking</option>
+      <option value="cycling">Cycling</option>
+      <option value="driving">Driving</option>
+    </select>
+  </div>
+
+  <div id="distance" class="distance">
+    Distance: 
+  </div>
+
+  <div class="navigate">
+    <box-icon name='navigation' type='solid' size="20px" onclick="ToggleNavigator()"></box-icon>
+  </div>
+
+  <div class="my-location">
+    <box-icon name='current-location' onclick="GoToMyLocation()"></box-icon>
+  </div>
+
+  <div id='map'></div>
+
+  <script src="./map.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
+</body>
+
+</html>

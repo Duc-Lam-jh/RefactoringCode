@@ -1,0 +1,189 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.search-wrapper{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  z-index: 2;
+}
+
+.navigate-search-wrapper.none{
+  display: none;
+}
+
+.navigate-search-wrapper{
+  position: absolute;
+  top: 10px;
+  left: 310px;
+
+  z-index: 2;
+}
+
+.typeOfDistance{
+  position: absolute;
+  top: 10px;
+  left: 570px;
+
+  display: none;
+
+  height: 30px;
+
+  z-index: 2;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.searchbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 30px;
+  width: 250px;
+}
+
+#second-search-results,
+#search-results{
+  position: relative;
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 2;
+}
+
+#second-search-results.none,
+#search-results.none{
+  display: none;
+}
+
+.search-item{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-item:hover{
+  background-color: rgb(240, 240, 240);
+}
+
+.search-item .name{
+  font-size: 19px;
+}
+
+.search-item .address{
+  font-size: 14px;
+}
+
+.second-searchbox,
+.searchbox{
+  width: 100%;
+  height: 100%;
+
+  padding-inline-start: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.searchbox:focus{
+  outline: none;
+}
+
+#searchicon{
+  position: absolute;
+  right: 2px;
+}
+
+.marker {
+  background-image: url('./img/marker.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.distance{
+  display: none;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  padding: 10px;
+
+  min-height: 30px;
+  min-width: 100px;
+
+  z-index: 3;
+
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.my-location{
+  position: absolute;
+  top: 105px;
+  right: 10px;
+
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 0 1px 1px rgba(0,0,0,0.2);
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+.my-location:hover{
+  background-color: rgb(240, 240, 240);
+}
+
+.navigate{
+  position: absolute;
+  top: 9px;
+  left: 270px;
+
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+.navigate:hover{
+  background-color: rgb(240, 240, 240);
+}
