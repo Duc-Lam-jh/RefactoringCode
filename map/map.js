@@ -1,4 +1,4 @@
-/* ========= Declarations ========== */
+/* ========= Utilities ========== */
 const Markers = () => {
 	const markerList = [];
 	return {
@@ -19,6 +19,14 @@ const Markers = () => {
 		}
 	};
 };
+
+function HideElement(id){
+	if (!document.getElementById(id).classList.contains('none')) {
+		document.getElementById(id).classList.add('none');
+	}
+}
+
+/* ========= Declarations ========== */
 const markers = Markers(); //an array to store the available markers on the map
 
 let navigate = false; //a flag to indicate if the navigating function is turned on
@@ -124,6 +132,7 @@ function LoadResults (array, id) {
 	const resultsBox = document.getElementById(id + 'search-results');
 	resultsBox.innerHTML = '';
 
+	// HideElement(id + 'search-results');
 	if (resultsBox.classList.contains('none')) {
 		resultsBox.classList.remove('none');
 	}
@@ -144,12 +153,8 @@ function LoadResults (array, id) {
 		searchitem.appendChild(address);
 		searchitem.addEventListener('click', function () {
 			FlyToPlace(item.center);
-			if (!document.getElementById('search-results').classList.contains('none')) {
-				document.getElementById('search-results').classList.add('none');
-			}
-			if (!document.getElementById('second-search-results').classList.contains('none')) {
-				document.getElementById('second-search-results').classList.add('none');
-			}
+			HideElement('search-results');
+			HideElement('second-search-results');
 		});
 
 		resultsBox.appendChild(searchitem);
