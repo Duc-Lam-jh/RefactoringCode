@@ -1,7 +1,29 @@
 /* ========= Declarations ========== */
-const markers = []; //an array to store the available markers on the map
+const Markers = () => {
+	const markerList = [];
+	return {
+		append    : function (marker) {
+			markerList.push(marker);
+		},
+		removeAll : function () {
+			markerList.forEach(function (item) {
+				item.remove();
+			});
+			markerList.length = 0;
+		},
+		get       : function (index) {
+			return markerList[index];
+		},
+		length : function(){
+			return markerList.length;
+		}
+	};
+};
+const markers = Markers(); //an array to store the available markers on the map
+
 let navigate = false; //a flag to indicate if the navigating function is turned on
-mapboxgl.accessToken = 'pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA'; //personal access token
+mapboxgl.accessToken =
+	'pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA'; //personal access token
 const map = new mapboxgl.Map({
 	container : 'map',
 	style     : 'mapbox://styles/mapbox/streets-v11',
@@ -23,9 +45,7 @@ function Debounce (func, time) {
 //FUNCTION to set up the map
 function LoadMap () {
 	//get user's current location, if success, call function SuccessLocation, otherwise call ErrorLocation
-	navigator.geolocation.getCurrentPosition(SuccessLocation, ErrorLocation, {
-		enableHighAccuracy : true,
-	});
+	GoToMyLocation();
 
 	//add searching functionality to the original searchbox
 	const searchbox = document.getElementById('searchbox');
@@ -146,29 +166,23 @@ async function FlyToPlace (center) {
 
 	//if the navigating flag is false, remove all markers
 	if (!navigate) {
-		markers.forEach(function (item) {
-			item.remove();
-		});
-		markers.length = 0;
+		markers.removeAll();
 	}
 	else {
 		//if the navigating flag is on and there are already 2 markers, remove all markers
-		if (markers.length == 2) {
-			markers.forEach(function (item) {
-				item.remove();
-			});
-			markers.length = 0;
+		if (markers.length() == 2) {
+			markers.removeAll();
 		}
 	}
 	//create a new marker and show it on the map
 	const marker = new mapboxgl.Marker().setLngLat(center).addTo(map);
-	markers.push(marker);
+	markers.append(marker);
 
 	//if the navigating flag is on and there are 2 markers in total, get the route between the two
-	if (navigate && markers.length == 2) {
+	if (navigate && markers.length() == 2) {
 		//._lngLat is the object that contains the coordinates of the position
 		//convert it into an array to get the [longitude, latitude] format
-		GetRoute(markers[0]._lngLat.toArray(), markers[1]._lngLat.toArray());
+		GetRoute(markers.get(0)._lngLat.toArray(), markers.get(1)._lngLat.toArray());
 	}
 }
 
@@ -190,7 +204,6 @@ async function GetRoute (start, end) {
 
 	const response = await fetch(distanceUrl);
 	const data = await response.json();
-	console.log(data.routes);
 
 	//show the estimated distance
 	const distanceBox = document.getElementById('distance');
@@ -240,11 +253,7 @@ function ToggleNavigator () {
 	const distance = document.getElementById('distance');
 
 	//reset the markers
-	console.log(markers);
-	markers.forEach(function (item) {
-		item.remove();
-	});
-	markers.length = 0;
+	markers.removeAll();
 
 	//if it is off then show its components
 	if (secondSearchbox.classList.contains('none')) {
