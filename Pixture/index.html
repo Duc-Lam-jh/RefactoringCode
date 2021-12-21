@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixture</title>
+
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/root.css">
+  <link rel="stylesheet" href="./styles/phone.css">
+  <link rel="stylesheet" href="./styles/tablet.css" media="screen and (min-width: 768px)">
+  <link rel="stylesheet" href="./styles/desktop.css" media="screen and (min-width: 1100px)">
+  <link rel="stylesheet" href="./styles/carousel.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="decor-1"><img src="./img/decor-1.png" alt="" width="400px"/></div>
+  <div class="decor-2"><img src="./img/decor-2.png" alt="" width="400px"/></div>
+
+  <div class="container">
+    <div class="header">
+      <div class="menu">
+        <box-icon name='menu' color='#ffffff' size="35px"></box-icon>
+      </div>
+
+      <div class="email-me">
+        <img src="./img/mail_icon.png" alt="Email me" />
+      </div>
+
+      <div class="sidebar">
+        <div class="content">
+          <span class="arrow-button">
+            <img src="img/left-arrow.png" width="20px" />
+          </span>
+          <span class="title">PAINT THE POWER</span>
+          <span class="subtitle">BLAZ ROBAR</span>
+        </div>
+      </div>
+
+      <div id="paint-your-pixture">
+        <h3 class="title">PAINT YOUR PIXTURE</h3>
+        <div class="img-wrapper">
+          <img class="tablet title-img" src="./img/paint-your-picture_title.png" alt="Paint your Pixture" />
+        </div>
+        <div class="info">
+          <div id="see-more" class="see-more">
+            <box-icon name='dots-horizontal-rounded' color='#ffffff'></box-icon>
+          </div>
+          <h5 class="subtitle">Humble Beginnings</h5>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut aliqua.</p>
+        </div>
+        <div class="more-info">
+          <img src="./img/right-arrow.png" alt="See more" width="30px"/>
+          <p>April 19th 2016</p>
+        </div>
+
+        <!-- <h5 class="subtitle">Humble Beginnings</h5>
+        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua.</p> -->
+        <div id="see-more" class="see-more">
+          <box-icon name='dots-horizontal-rounded' color='#ffffff'></box-icon>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="pics-worth-seeing" class="carousel">
+      <div class="title">PICTURES WORTH SEEING</div>
+      <div id="carousel-wrapper" class="wrapper">
+
+        <div class="controls">
+          <img id="left" class="go-left" src='./img/left-arrow.png' width="50px" onclick="MoveLeft(this)"></img>
+          <img id="right" class="go-right" src='./img/right-arrow.png' width="50px" onclick="MoveRight(this)"></img>
+        </div>
+
+        <div id="moving-container" class="moving-container">
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <div class="triangle"></div>
+
+            <div class="img">
+              <div class="likes">
+                <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="description">
+                <h3>TITLE TITLE TITLE TITLE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut aliqua.</p>
+              </div>
+              <div class="comments">
+                <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+              </div>
+              <div></div>
+              <div class="more">
+                <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="body-header">
+        <div class="sidebar">
+          <div class="content">
+            <span class="arrow-button">
+              <img src="img/left-arrow.png" width="20px" />
+            </span>
+            <span class="title">PAINT THE POWER</span>
+            <span class="subtitle">BLAZ ROBAR</span>
+          </div>
+        </div>
+
+        <div id="its-your-passion">
+          <div class="img-wrapper">
+            <img class="title-img" src="./img/its-your-passion_title.png" alt="It's your passion"/>
+          </div>
+          <!-- <img src="./img/its-your-passion_title.png" alt="It's your passion" class="title-img"> -->
+          <div class="info">
+            <div id="see-more" class="see-more">
+              <box-icon name='dots-horizontal-rounded' color='#ffffff'></box-icon>
+            </div>
+            <h5 class="subtitle">Texture makes art</h5>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut aliqua.</p>
+          </div>
+          <div class="more-info">
+            <img src="./img/right-arrow.png" alt="See more" width="30px"/>
+            <p>April 19th 2016</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-info">
+        <div class="main">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+
+        <div id="read-more" class="carousel">
+          <div class="title">ARTICLES WORTH READING</div>
+          <div id="carousel-wrapper" class="wrapper">
+    
+            <div class="controls">
+              <img id="left" class="go-left" src='./img/left-arrow.png' width="50px" onclick="MoveLeft(this)"></img>
+              <img id="right" class="go-right" src='./img/right-arrow.png' width="50px" onclick="MoveRight(this)"></img>
+            </div>
+    
+            <div id="moving-container" class="moving-container">
+    
+              <div class="card">
+    
+                <div class="triangle"></div>
+    
+                <div class="img">
+                  <div class="likes">
+                    <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="description">
+                    <h3>TITLE TITLE TITLE TITLE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                      ut aliqua.</p>
+                  </div>
+                  <div class="comments">
+                    <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+                  </div>
+                  <div></div>
+                  <div class="more">
+                    <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="card">
+    
+                <div class="triangle"></div>
+    
+                <div class="img">
+                  <div class="likes">
+                    <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="description">
+                    <h3>TITLE TITLE TITLE TITLE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                      ut aliqua.</p>
+                  </div>
+                  <div class="comments">
+                    <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+                  </div>
+                  <div></div>
+                  <div class="more">
+                    <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="card">
+    
+                <div class="triangle"></div>
+    
+                <div class="img">
+                  <div class="likes">
+                    <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="description">
+                    <h3>TITLE TITLE TITLE TITLE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                      ut aliqua.</p>
+                  </div>
+                  <div class="comments">
+                    <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+                  </div>
+                  <div></div>
+                  <div class="more">
+                    <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="card">
+    
+                <div class="triangle"></div>
+    
+                <div class="img">
+                  <div class="likes">
+                    <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="description">
+                    <h3>TITLE TITLE TITLE TITLE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                      ut aliqua.</p>
+                  </div>
+                  <div class="comments">
+                    <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+                  </div>
+                  <div></div>
+                  <div class="more">
+                    <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="card">
+    
+                <div class="triangle"></div>
+    
+                <div class="img">
+                  <div class="likes">
+                    <box-icon name='heart' color='#d3d3d3' size="18px"></box-icon> 365
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="description">
+                    <h3>TITLE TITLE TITLE TITLE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                      ut aliqua.</p>
+                  </div>
+                  <div class="comments">
+                    <box-icon name='message' type='solid' color='#d3d3d3' ></box-icon> &nbsp; 345 comments
+                  </div>
+                  <div></div>
+                  <div class="more">
+                    <box-icon name='dots-horizontal-rounded' color="#0c2539"></box-icon>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar col-d-1">
+          <div class="subtitle">JANUARY 2016</div>
+        </div>
+
+        <div class="col-1 col-d-2">
+          <h3 class="subtitle">Start-Up Resources</h3>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+        </div>
+
+        <div class="col-2 col-d-3">
+          <h3 class="subtitle">Training & Funding</h3>
+          <p class="content">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis</p>
+        </div>
+
+        <div class="col-1 col-d-4">
+          <h3 class="subtitle">Connect</h3>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. </p>
+        </div>
+
+        <div class="col-2 col-d-5">
+          <h3 class="subtitle">Communicate</h3>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div id="credit">
+        <div class="info">
+          <h3 class="subtitle">TEXTURES BY</h3>
+          <h2 class="title">Jordan Hetzer</h2>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</p>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <div class="col-1 col-d-2">
+          <h3 class="subtitle">ABOUT</h3>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. </p>
+        </div>
+
+        <div class="col-2 flex-column col-d-3">
+          <h3 class="subtitle">HISTORY</h3>
+          <p class="content">Resources</p>
+          <p class="content">Downloads & Updates</p>
+          <p class="content">Manuals</p>
+          <p class="content">Tech Specs</p>
+          <p class="content">System Status</p>
+        </div>
+
+        <div class="col-d-4 flex-column desktop">
+          <h3 class="subtitle">CONTACT</h3>
+          <p class="content">Apple Store (Education Institutions)</p>
+          <p class="content">1300-551-927</p>
+          <p class="content">Apple Store (Small Business)</p>
+          <p class="content">1300-369-095</p>
+        </div>
+
+        <p class="afterwords">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+
+      
+    </div>
+
+  </div>
+
+
+
+  <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

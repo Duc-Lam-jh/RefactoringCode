@@ -1,0 +1,102 @@
+.header{
+  grid-template-columns: 60px 1fr;
+}
+
+.email-me{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  width: 75px;
+  height: 75px;
+
+  top: 0px;
+  right: 0px;
+
+  z-index: 2;
+}
+
+#paint-your-pixture{
+  background-image: url('../img/paint-your-pixture.png');
+  background-attachment: fixed;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#paint-your-pixture .title{
+  display: none;
+}
+
+#paint-your-pixture .img-wrapper{
+  width: 100%;
+  margin-block-start: 40vh;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: center;
+}
+
+#paint-your-pixture .title-img{
+  max-width: 400px;
+}
+
+#paint-your-pixture .info{
+  position: absolute;
+  bottom: 75px;
+}
+
+#paint-your-pixture .subtitle{
+  margin-inline-start: 50px;
+  margin-inline-end: 50px;
+  margin-block-start: 120px;
+}
+
+#paint-your-pixture .content{
+  margin-inline-start: 50px;
+  margin-inline-end: 100px;
+}
+
+#its-your-passion{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background-image: url('../img/its-your-passion.png');
+  background-attachment: fixed;
+}
+
+#its-your-passion .img-wrapper{
+  margin-block-start: 40vh;
+  transform: translateY(-50%);
+}
+
+#its-your-passion .title-img{
+  min-width: 400px;
+}
+
+#its-your-passion .info{
+  align-items: flex-start;
+  position: absolute;
+  bottom: 75px;
+}
+
+#credit{
+  height: 60vh;
+
+  background-image: url('../img/credits_image.png');
+  background-attachment: fixed;
+}
+
+#credit .info{
+  left: 50vw;
+  top: 40vh;
+}
+
+#credit .content{
+  width: 100%;
+  padding-inline-end: 32px;
+}
