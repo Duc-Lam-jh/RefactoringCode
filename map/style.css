@@ -8,7 +8,16 @@ body {
 
 #map {
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
+
+  position: relative;
+}
+
+#map2{
+  width: 100vw;
+  height: 50vh;
+
+  position: relative;
 }
 
 .search-wrapper{

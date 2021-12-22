@@ -21,53 +21,105 @@
 </head>
 
 <body>
-  <div class="search-wrapper">
-    <div class="searchbar">
-      <input id="searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
-      <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
-    </div>
-    <div id="search-results" class="none">
-      <div class="search-item">
-        <div class="name">Việt Nam</div>
-        <div class="address"></div>
+  <div id='map'>
+
+    <div class="search-wrapper">
+      <div class="searchbar">
+        <input id="searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
+        <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
+      </div>
+      <div id="search-results" class="none">
+        <div class="search-item">
+          <div class="name">Việt Nam</div>
+          <div class="address"></div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div id="secondSearch" class="navigate-search-wrapper none">
-    <div class="searchbar">
-      <input id="second-searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
-      <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
-    </div>
-    <div id="second-search-results" class="none">
-      <div class="search-item">
-        <div class="name">Việt Nam</div>
-        <div class="address"></div>
+  
+    <div id="secondSearch" class="navigate-search-wrapper none">
+      <div class="searchbar">
+        <input id="second-searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
+        <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
+      </div>
+      <div id="second-search-results" class="none">
+        <div class="search-item">
+          <div class="name">Việt Nam</div>
+          <div class="address"></div>
+        </div>
       </div>
     </div>
+  
+    <div id="typeDistance" class="typeOfDistance">
+      <select id="typeOfDistance" name="typeOfDistance">
+        <option value="walking" selected>Walking</option>
+        <option value="cycling">Cycling</option>
+        <option value="driving">Driving</option>
+      </select>
+    </div>
+  
+    <div id="distance" class="distance">
+      Distance: 
+    </div>
+  
+    <div class="navigate">
+      <box-icon name='navigation' type='solid' size="20px"></box-icon>
+    </div>
+  
+    <div class="my-location">
+      <box-icon name='current-location'></box-icon>
+    </div>
+
   </div>
 
-  <div id="typeDistance" class="typeOfDistance">
-    <select id="typeOfDistance" name="typeOfDistance">
-      <option value="walking" selected>Walking</option>
-      <option value="cycling">Cycling</option>
-      <option value="driving">Driving</option>
-    </select>
-  </div>
+  <div id='map2'>
 
-  <div id="distance" class="distance">
-    Distance: 
-  </div>
+    <div class="search-wrapper">
+      <div class="searchbar">
+        <input id="searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
+        <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
+      </div>
+      <div id="search-results" class="none">
+        <div class="search-item">
+          <div class="name">Việt Nam</div>
+          <div class="address"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="secondSearch" class="navigate-search-wrapper none">
+      <div class="searchbar">
+        <input id="second-searchbox" class="searchbox" type="text" placeholder="Search..." autocomplete="off">
+        <box-icon id="searchicon" name='search-alt-2' color='#a9a9a9'></box-icon>
+      </div>
+      <div id="second-search-results" class="none">
+        <div class="search-item">
+          <div class="name">Việt Nam</div>
+          <div class="address"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="typeDistance" class="typeOfDistance">
+      <select id="typeOfDistance" name="typeOfDistance">
+        <option value="walking" selected>Walking</option>
+        <option value="cycling">Cycling</option>
+        <option value="driving">Driving</option>
+      </select>
+    </div>
+  
+    <div id="distance" class="distance">
+      Distance: 
+    </div>
+  
+    <div class="navigate">
+      <box-icon name='navigation' type='solid' size="20px"></box-icon>
+    </div>
+  
+    <div class="my-location">
+      <box-icon name='current-location'></box-icon>
+    </div>
 
-  <div class="navigate">
-    <box-icon name='navigation' type='solid' size="20px" onclick="toggleNavigator()"></box-icon>
   </div>
-
-  <div class="my-location">
-    <box-icon name='current-location' onclick="goToMyLocation()"></box-icon>
-  </div>
-
-  <div id='map'></div>
 
   <script src="./map.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
