@@ -280,3 +280,8 @@ function ToggleNavigator () {
 
 /* ========== Execution ========== */
 LoadMap();
+
+
+const addingMoreStuff = () => {
+	console.log('testing adding sth');
+}
