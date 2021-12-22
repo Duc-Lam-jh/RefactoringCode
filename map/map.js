@@ -280,3 +280,7 @@ function ToggleNavigator () {
 
 /* ========== Execution ========== */
 LoadMap();
+
+const creatingConflict = () => {
+	console.log('testing do something')
+}
