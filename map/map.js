@@ -1,4 +1,4 @@
-function CreateMap(token, containerId) {
+function createMap(token, containerId) {
 	const mapContainer = document.getElementById(containerId);
 
 	/* ========= Utilities ========== */
@@ -138,6 +138,8 @@ function CreateMap(token, containerId) {
 
 			const data = await response.json();
 			loadResults(data.features, searchBoxPrefixId);
+		} else {
+			//do nothing
 		}
 	}
 
@@ -148,6 +150,8 @@ function CreateMap(token, containerId) {
 
 		if (resultsBox.classList.contains('none')) {
 			resultsBox.classList.remove('none');
+		} else {
+			//do nothing
 		}
 
 		//add results into box
@@ -188,8 +192,7 @@ function CreateMap(token, containerId) {
 
 		if (!isFindingRouteFuncOn) {
 			availableMarkers.removeAll();
-		}
-		else {
+		}	else {
 			if (availableMarkers.length() == 2) {
 				availableMarkers.removeAll();
 			}
@@ -203,6 +206,8 @@ function CreateMap(token, containerId) {
 			* we convert it into an array to get the [longitude, latitude] format
 			*/
 			getRoute(availableMarkers.get(0)._lngLat.toArray(), availableMarkers.get(1)._lngLat.toArray());
+		} else {
+			//do nothing
 		}
 	}
 
@@ -245,8 +250,7 @@ function CreateMap(token, containerId) {
 		// if the route already exists on the map, reset it
 		if (mainMap.getSource('route')) {
 			mainMap.getSource('route').setData(geojson);
-		}
-		else {
+		}	else {
 			// otherwise, make a new request
 			mainMap.addLayer({
 				id: 'route',
@@ -280,8 +284,7 @@ function CreateMap(token, containerId) {
 			secondSearchbox.classList.remove('none');
 			typeDistance.style.display = 'flex';
 			isFindingRouteFuncOn = true;
-		}
-		else {
+		}	else {
 			//other wise hide them all
 			secondSearchbox.classList.add('none');
 			typeDistance.style.display = 'none';
@@ -298,7 +301,7 @@ function CreateMap(token, containerId) {
 	}
 }
 /* ========== Execution ========== */
-const upMap = CreateMap('pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA', 'map');
-const downMap = CreateMap('pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA', 'map2')
+const upMap = createMap('pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA', 'map');
+const downMap = createMap('pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA', 'map2')
 upMap.loadMap();
 downMap.loadMap();
