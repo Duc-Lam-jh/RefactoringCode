@@ -32,7 +32,7 @@ function hideElement(id) {
 mapboxgl.accessToken = 'pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA';
 const availableMarkers = Markers();
 const mapNavigationControls = new mapboxgl.NavigationControl();
-let isNavigatingFuncOn = false;
+let isFindingRouteFuncOn = false;
 let debounceTimer;
 const mainMap = new mapboxgl.Map({
 	container: 'map',
@@ -52,7 +52,7 @@ function loadMap() {
 }
 
 function goToMyLocation() {
-	//if successfully get position, execute successLocation, otherwise errorLocation
+	//if successfully get position, execute successLocation, otherwise execute errorLocation
 	navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
 		enableHighAccuracy: true,
 	});
@@ -173,7 +173,7 @@ async function flyToPlace(destination) {
 		essential: true,
 	});
 
-	if (!isNavigatingFuncOn) {
+	if (!isFindingRouteFuncOn) {
 		availableMarkers.removeAll();
 	}
 	else {
@@ -185,7 +185,7 @@ async function flyToPlace(destination) {
 	const marker = new mapboxgl.Marker().setLngLat(destination).addTo(mainMap);
 	availableMarkers.append(marker);
 
-	if (isNavigatingFuncOn && availableMarkers.length() == 2) {
+	if (isFindingRouteFuncOn && availableMarkers.length() == 2) {
 		/**_lngLat is the object that contains the coordinates of the position
 		* we convert it into an array to get the [longitude, latitude] format
 		*/
@@ -205,7 +205,7 @@ async function getRoute(start, end) {
 		start +
 		';' +
 		end +
-		'?geometries=geojson&access_token=pk.eyJ1IjoiZHVjbGFtMjI3IiwiYSI6ImNrd3Z6OHhqZDA4a3cyb3M4czltcHAwZXMifQ.5bneNUlldaEBHRv9vr0vNA';
+		'?geometries=geojson&access_token=' + mapboxgl.accessToken;
 
 	const response = await fetch(distanceUrl);
 	const data = await response.json();
@@ -217,6 +217,10 @@ async function getRoute(start, end) {
 
 	//draw route onto map
 	const route = data.routes[0].geometry.coordinates;
+	drawRoute(route);
+}
+
+function drawRoute(route) {
 	const geojson = {
 		type: 'Feature',
 		properties: {},
@@ -251,29 +255,25 @@ async function getRoute(start, end) {
 	}
 }
 
-
-
-//FUNCTION to toggle the navigation functionality
 function toggleNavigator() {
 	const secondSearchbox = document.getElementById('secondSearch');
 	const typeDistance = document.getElementById('typeDistance');
 	const distance = document.getElementById('distance');
 
-	//reset the availableMarkers
 	availableMarkers.removeAll();
 
 	//if it is off then show its components
 	if (secondSearchbox.classList.contains('none')) {
 		secondSearchbox.classList.remove('none');
 		typeDistance.style.display = 'flex';
-		isNavigatingFuncOn = true;
+		isFindingRouteFuncOn = true;
 	}
 	else {
 		//other wise hide them all
 		secondSearchbox.classList.add('none');
 		typeDistance.style.display = 'none';
 		distance.style.display = 'none';
-		isNavigatingFuncOn = false;
+		isFindingRouteFuncOn = false;
 
 		mainMap.removeLayer('route');
 		mainMap.removeSource('route');
