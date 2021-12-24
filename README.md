@@ -17,6 +17,8 @@ I also broke down some big functions into smaller ones with specific purpose in 
 - In an arrow function, this points to the value of this that its immediate parent points to.
 - In a normal function, this points to the object that invokes it or the object that it is bound with. When a function is bind to an element using an event listener, this is the element that invoked the function.
 
+![The nature of this keyword](https://res.cloudinary.com/practicaldev/image/fetch/s--kkP9aMfp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/jenuvv92wga4zgbq4u2g.png)
+
 ### Arguments object
 - An arrow function doesn't receive arguments object like a normal function would.
 
@@ -26,3 +28,5 @@ I also broke down some big functions into smaller ones with specific purpose in 
 ## 2. Class and closure
 - Class use **this** keyword to point to the private data
 - Closure supports encapsulation while classes don't
+
+
